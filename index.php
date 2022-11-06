@@ -10,39 +10,36 @@ header("Access-Control-Allow-Headers: X-Requested-With");
 $operation_type = $_POST['operation_type'];
 $first = $_POST['x'];
 $second = $_POST['y'];
-$result = 0;
 
-switch ($operation_type) {
-    case "addition":
-        $result = $first + $second;
-        break;
-    case "subtraction":
-        $result = $first - $second;
-        break;
-    case "multiplication":
-        $result =  $first * $second;
-        break;
-    default:
+
+class Operation{
+    public $slackUsername;
+    public $result;
+    public $operation_type;
+
+    //Methods
+    function setAttributes($operation_type, $first, $second){
+        switch ($operation_type) {
+            case "addition":
+                $this->result = $first + $second;
+                break;
+            case "subtraction":
+                $this->result = $first - $second;
+                break;
+            case "multiplication":
+                $this->result =  $first * $second;
+                break;
+            default:
+        }
+
+        $this->slackUsername = "tall_dev";
+        $this->operation_type = $operation_type;
+
+    }
 }
 
+$new_op = new Operation();
+$new_op->setAttributes( $operation_type, $first, $second);
+$tall_dev_encoded = json_encode($new_op);
 
-echo $result;
-
-//class Operation{
-//    public $slackUsername;
-//    public $result;
-//    public $operation_type;
-//
-//    //Methods
-//    function setAttributes($slackUsername, $operation_type, $result){
-//        $this->slackUsername = $slackUsername;
-//        $this->result = $result;
-//        $this->operation_type = $operation_type;
-//    }
-//}
-//
-//$new_op = new Operation();
-//$tall_dev = $new_op->setAttributes("tall_dev", $operation_type, $result);
-//$tall_dev_encoded = json_encode($tall_dev);
-//
-//echo $tall_dev_encoded;
+echo $tall_dev_encoded;
