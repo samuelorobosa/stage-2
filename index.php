@@ -20,18 +20,19 @@ class Operation{
     public $operation_type;
 
     //Methods
-    function setAttributes($operation_type, $first, $second){
-        if (strpos($operation_type, "addition") || strpos($operation_type, "add"))
+    function setAttributes($operation_type, $first, $second): void
+    {
+        if (str_contains($operation_type, "addition") || str_contains($operation_type, "add"))
         {
             $this->result = $first + $second;
             $this->operation_type = "addition";
         }
-        else if(strpos($operation_type,'subtraction') || strpos($operation_type,'subtract'))
+        else if(str_contains($operation_type,'subtraction') || str_contains($operation_type,'subtract'))
         {
             $this->result = $first - $second;
             $this->operation_type = "subtraction";
         }
-        else if(strpos($operation_type,'multiplication') || strpos($operation_type,'multiply'))
+        else if(str_contains($operation_type,'multiplication') || str_contains($operation_type,'multiply'))
         {
             $this->result = $first * $second;
             $this->operation_type = "multiplication";
