@@ -23,24 +23,26 @@ switch ($operation_type) {
         $result =  $first * $second;
         break;
     default:
-        $result = 0;
 }
 
-class Operation{
-    public $slackUsername;
-    public $result;
-    public $operation_type;
 
-    //Methods
-    function setAttributes($slackUsername, $operation_type, $result){
-        $this->slackUsername = $slackUsername;
-        $this->result = $result;
-        $this->operation_type = $operation_type;
-    }
-}
+echo $result;
 
-$new_op = new Operation();
-$tall_dev = $new_op->setAttributes("tall_dev", $operation_type, $result);
-$tall_dev_encoded = json_encode($tall_dev);
-
-echo $tall_dev_encoded;
+//class Operation{
+//    public $slackUsername;
+//    public $result;
+//    public $operation_type;
+//
+//    //Methods
+//    function setAttributes($slackUsername, $operation_type, $result){
+//        $this->slackUsername = $slackUsername;
+//        $this->result = $result;
+//        $this->operation_type = $operation_type;
+//    }
+//}
+//
+//$new_op = new Operation();
+//$tall_dev = $new_op->setAttributes("tall_dev", $operation_type, $result);
+//$tall_dev_encoded = json_encode($tall_dev);
+//
+//echo $tall_dev_encoded;
