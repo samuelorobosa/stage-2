@@ -6,6 +6,8 @@ header('Access-Control-Allow-Methods: GET, POST');
 
 header("Access-Control-Allow-Headers: X-Requested-With");
 
+header("Content-Type: application/json");
+
 //collect value from request
 $operation_type = $_POST['operation_type'];
 $first = $_POST['x'];
