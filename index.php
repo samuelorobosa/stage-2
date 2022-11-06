@@ -19,17 +19,17 @@ class Operation{
 
     //Methods
     function setAttributes($operation_type, $first, $second){
-        switch ($operation_type) {
-            case "addition":
-                $this->result = $first + $second;
-                break;
-            case "subtraction":
-                $this->result = $first - $second;
-                break;
-            case "multiplication":
-                $this->result =  $first * $second;
-                break;
-            default:
+        if ($operation_type == 'addition')
+        {
+            $this->result = $first + $second;
+        }
+        else if($operation_type == 'subtraction')
+        {
+            $this->result = $first - $second;
+        }
+        else if($operation_type == 'multiplication')
+        {
+            $this->result = $first * $second;
         }
 
         $this->slackUsername = "tall_dev";
