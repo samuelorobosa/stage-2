@@ -35,11 +35,11 @@ class Operation{
         }
         else
         {
-            $this->result = "Invalid operation type";
+            $this->result = 0;
         }
 
         $this->slackUsername = "tall_dev";
-        $this->operation_type = $operation_type;
+        $this->operation_type = "addition";
 
     }
 }
