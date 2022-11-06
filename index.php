@@ -24,14 +24,17 @@ class Operation{
         if ($operation_type == 'addition' || $operation_type == 'add' )
         {
             $this->result = $first + $second;
+            $this->operation_type = "addition";
         }
         else if($operation_type == 'subtraction' || $operation_type == 'subtract')
         {
             $this->result = $first - $second;
+            $this->operation_type = "subtraction";
         }
         else if($operation_type == 'multiplication' || $operation_type == 'multiply')
         {
             $this->result = $first * $second;
+            $this->operation_type = "multiplication";
         }
         else
         {
@@ -39,7 +42,6 @@ class Operation{
         }
 
         $this->slackUsername = "tall_dev";
-        $this->operation_type = "addition";
 
     }
 }
