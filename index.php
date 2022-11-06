@@ -28,23 +28,21 @@ function handleEnum($operationType, $firstValue, $secondValue){
     }
 }
 
-$result = handleEnum($operation_type, $first, $second);
-
 class Operation{
     public $slackUsername;
     public $result;
     public $operation_type;
 
     //Methods
-    function setAttributes($slackUsername, $resultOp, $operation_type){
+    function setAttributes($slackUsername, $operation_type, $firstValue, $secondValue){
         $this->slackUsername = $slackUsername;
-        $this->result = $resultOp;
+        $this->result = handleEnum($operation_type, $firstValue, $secondValue);;
         $this->operation_type = $operation_type;;
     }
 }
 
 $new_op = new Operation();
-$tall_dev = $new_op->setAttributes("tall_dev", $result, $operation_type);
+$tall_dev = $new_op->setAttributes("tall_dev", $operation_type, $first, $second);
 $tall_dev_encoded = json_encode($tall_dev);
 
 echo $tall_dev_encoded;
