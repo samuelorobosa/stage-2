@@ -21,17 +21,17 @@ class Operation{
 
     //Methods
     function setAttributes($operation_type, $first, $second){
-        if ($operation_type == 'addition' || $operation_type == 'add' )
+        if (strpos($operation_type, "addition") || strpos($operation_type, "add"))
         {
             $this->result = $first + $second;
             $this->operation_type = "addition";
         }
-        else if($operation_type == 'subtraction' || $operation_type == 'subtract')
+        else if(strpos($operation_type,'subtraction') || strpos($operation_type,'subtract'))
         {
             $this->result = $first - $second;
             $this->operation_type = "subtraction";
         }
-        else if($operation_type == 'multiplication' || $operation_type == 'multiply')
+        else if(strpos($operation_type,'multiplication') || strpos($operation_type,'multiply'))
         {
             $this->result = $first * $second;
             $this->operation_type = "multiplication";
