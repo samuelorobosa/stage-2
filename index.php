@@ -11,38 +11,37 @@ $operation_type = $_POST['operation_type'];
 $first = $_POST['x'];
 $second = $_POST['y'];
 
-function handleEnum($operationType, $firstValue, $secondValue){
+echo $first;
 
-    switch ($operationType) {
-        case "addition":
-            return $firstValue + $secondValue;
-            break;
-        case "subtraction":
-            return $firstValue - $secondValue;
-            break;
-        case "multiplication":
-            return  $firstValue * $secondValue;
-            break;
-        default:
-            return 0;
-    }
-}
-
-class Operation{
-    public $slackUsername;
-    public $result;
-    public $operation_type;
-
-    //Methods
-    function setAttributes($slackUsername, $operation_type, $firstValue, $secondValue){
-        $this->slackUsername = $slackUsername;
-        $this->result = handleEnum($operation_type, $firstValue, $secondValue);;
-        $this->operation_type = $operation_type;;
-    }
-}
-
-$new_op = new Operation();
-$tall_dev = $new_op->setAttributes("tall_dev", $operation_type, $first, $second);
-$tall_dev_encoded = json_encode($tall_dev);
-
-echo $tall_dev_encoded;
+//function handleEnum($operationType, $firstValue, $secondValue){
+//
+//    switch ($operationType) {
+//        case "addition":
+//            return $firstValue + $secondValue;
+//        case "subtraction":
+//            return $firstValue - $secondValue;
+//        case "multiplication":
+//            return  $firstValue * $secondValue;
+//        default:
+//            return 0;
+//    }
+//}
+//
+//class Operation{
+//    public $slackUsername;
+//    public $result;
+//    public $operation_type;
+//
+//    //Methods
+//    function setAttributes($slackUsername, $operation_type, $firstValue, $secondValue){
+//        $this->slackUsername = $slackUsername;
+//        $this->result = handleEnum($operation_type, $firstValue, $secondValue);;
+//        $this->operation_type = $operation_type;;
+//    }
+//}
+//
+//$new_op = new Operation();
+//$tall_dev = $new_op->setAttributes("tall_dev", $operation_type, $first, $second);
+//$tall_dev_encoded = json_encode($tall_dev);
+//
+//echo $tall_dev_encoded;
