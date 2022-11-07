@@ -47,8 +47,10 @@ class Operation{
     }
 }
 
-$new_op = new Operation();
-$new_op->setAttributes( $operation_type, $first, $second);
-$tall_dev_encoded = json_encode($new_op);
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $new_op = new Operation();
+    $new_op->setAttributes( $operation_type, $first, $second);
+    $tall_dev_encoded = json_encode($new_op);
 
-echo $tall_dev_encoded;
+    echo $tall_dev_encoded;
+}
